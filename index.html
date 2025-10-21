@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback Form</title>
+  <title>Inline Web Form</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,6 +14,7 @@
       justify-content: center;
       align-items: center;
     }
+
     form {
       display: flex;
       align-items: center;
@@ -21,8 +22,9 @@
       background: #fff;
       padding: 12px 18px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     input, textarea {
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -30,15 +32,25 @@
       font-size: 14px;
       transition: border 0.3s ease;
     }
+
     input:focus, textarea:focus {
       border-color: #4a90e2;
       outline: none;
     }
-    input[type="text"], input[type="email"] { width: 150px; }
-    textarea { width: 180px; height: 32px; resize: none; }
+
+    input[type="text"], input[type="email"] {
+      width: 150px;
+    }
+
+    textarea {
+      width: 180px;
+      height: 32px;
+      resize: none;
+    }
+
     input[type="submit"] {
       background: #4a90e2;
-      color: #fff;
+      color: white;
       border: none;
       padding: 8px 16px;
       border-radius: 6px;
@@ -46,15 +58,19 @@
       font-weight: 500;
       transition: background 0.3s ease;
     }
-    input[type="submit"]:hover { background: #357ab8; }
+
+    input[type="submit"]:hover {
+      background: #357ab8;
+    }
   </style>
 </head>
 <body>
   <form action="http://10.0.2.15/submit.php" method="POST">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="feedback" placeholder="Feedback"></textarea>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Feedback"></textarea>
     <input type="submit" value="Submit">
   </form>
 </body>
 </html>
+
