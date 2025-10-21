@@ -1,29 +1,60 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-    <title>Contact Form</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    form {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+    input[type="text"], input[type="email"] { width: 150px; }
+    textarea { width: 180px; height: 32px; resize: none; }
+    input[type="submit"] {
+      background: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    input[type="submit"]:hover { background: #357ab8; }
+  </style>
 </head>
-
 <body>
-
-<h2>Contact Us</h2>
-<!-- Update action with your VM IP -->
-
-<form action="http://10.0.2.15/submit.php" method="POST">
-
-    <input type="text" name="name" placeholder="Name" required><br><br>
-
-    <input type="email" name="email" placeholder="Email" required><br><br>
-
-    <textarea name="message" placeholder="Message"></textarea><br><br>
-
-    <button type="submit">Submit</button>
-
-</form>
+  <form action="http://10.0.2.15/submit.php" method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="feedback" placeholder="Feedback"></textarea>
+    <input type="submit" value="Submit">
+  </form>
 </body>
-
 </html>
